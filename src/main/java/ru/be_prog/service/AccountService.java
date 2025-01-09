@@ -15,6 +15,8 @@ public interface AccountService {
 
     List<Account> findAllAccounts();
 
+    List<Account> findAccountsByCountry(String country);
+
     void deleteAccountById(UUID id);
 
     void deleteAllAccounts();

@@ -38,6 +38,9 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
+    public List<Account> findAccountsByCountry(String country) { return accountDao.findAccountsByCountry(country); }
+
+    @Override
     public void deleteAccountById(UUID id) {
         accountDao.deleteAccountById(id);
     }

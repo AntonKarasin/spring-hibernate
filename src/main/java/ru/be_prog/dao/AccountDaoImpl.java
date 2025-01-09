@@ -40,6 +40,13 @@ public class AccountDaoImpl implements AccountDao {
     }
 
     @Override
+    public List<Account> findAccountsByCountry(String country) {
+        TypedQuery<Account> query = sessionFactory.getCurrentSession().createQuery("select a from Account a, Profile p where p.country = ?1 and a.profile.id = p.id", Account.class);
+        query.setParameter(1, country);
+        return query.getResultList();
+    }
+
+    @Override
     public void deleteAccountById(UUID id) {
         Account account = findAccountById(id);
         sessionFactory.getCurrentSession().remove(account);

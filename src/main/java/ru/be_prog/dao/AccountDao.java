@@ -12,6 +12,8 @@ public interface AccountDao {
 
     List<Account> findAllAccounts();
 
+    List<Account> findAccountsByCountry(String country);
+
     void deleteAccountById(UUID id);
 
     void deleteAllAccounts();
