@@ -2,6 +2,7 @@ package ru.be_prog.dao;
 
 import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.MutationQuery;
 import ru.be_prog.exception.NotFoundException;
@@ -54,7 +55,10 @@ public class AccountDaoImpl implements AccountDao {
 
     @Override
     public void deleteAllAccounts() {
-        MutationQuery query = sessionFactory.getCurrentSession().createMutationQuery("delete from Account");
-        query.executeUpdate();
+        Session session = sessionFactory.getCurrentSession();
+        List<Account> accounts = findAllAccounts();
+        for (Account account: accounts) {
+            session.remove(account);
+        }
     }
 }
