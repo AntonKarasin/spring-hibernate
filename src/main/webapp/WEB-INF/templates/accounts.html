@@ -15,6 +15,10 @@
             <th>Id</th>
             <th>Name</th>
             <th>LastName</th>
+            <th>ProfileId</th>
+            <th>DateOfBirth</th>
+            <th>Country</th>
+            <th>About</th>
         </tr>
         </thead>
         <tbody>
@@ -22,6 +26,10 @@
                 <td th:text="${{sb.id}}"></td>
                 <td th:text="${{sb.name}}"></td>
                 <td th:text="${{sb.lastName}}"></td>
+                <td th:text="${{sb.profile.id}}"></td>
+                <td th:text="${{sb.profile.dateOfBirth}}"></td>
+                <td th:text="${{sb.profile.country}}"></td>
+                <td th:text="${{sb.profile.about}}"></td>
             </tr>
         </tbody>
     </table>
@@ -29,6 +37,9 @@
     <form action="#" th:action="@{/accounts}" th:object="${newAccount}" method="post">
         <input type="text" th:field="*{name}" placeholder="Name"/>
         <input type="text" th:field="*{lastName}" placeholder="LastName"/>
+        <input type="text" th:field="*{profile.dateOfBirth}" placeholder="DateOfBirth"/>
+        <input type="text" th:field="*{profile.country}" placeholder="Country"/>
+        <input type="text" th:field="*{profile.about}" placeholder="About"/>
         <button>Create Account</button>
     </form>
 </div>

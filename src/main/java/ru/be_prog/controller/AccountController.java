@@ -32,6 +32,7 @@ public class AccountController {
     @PostMapping(value = "/accounts")
     public String createAccount(Model model, @ModelAttribute Account newAccount) {
         newAccount.setId(UUID.randomUUID());
+        newAccount.getProfile().setId(UUID.randomUUID());
         accountService.saveAccount(newAccount);
         model.addAttribute("newAccount", new Account());
         return "redirect:/accounts";

@@ -24,7 +24,6 @@ public class Account {
     @Column(name="lastname")
     private String lastName;
 
-
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     private Profile profile;
 }
