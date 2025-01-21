@@ -15,7 +15,7 @@ public class MyCustomAccountRepositoryImpl implements MyCustomAccountRepository 
     @Autowired
     private final SessionFactory sessionFactory;
     @Override
-    public List<Account> findAccountsByCountry(String country) {
+    public List<Account> getAccountsByCountry(String country) {
         TypedQuery<Account> query = sessionFactory.getCurrentSession().createQuery(
                 "select a from Account a, Profile p where p.country = ?1 and a.profile.id = p.id", Account.class
         );
