@@ -11,17 +11,5 @@ import java.util.UUID;
 @Repository
 @Transactional
 public interface AccountJpaRepository extends  JpaRepository<Account, UUID>, MyCustomAccountRepository {
-    // void saveAccount(Account account);
-
-    // Account getReferenceById(UUID id);
-
-    // List<Account> findAll();
-
     List<Account> getAccountsByCountry(String country);
-
-    // void deleteById(UUID id);
-
-    // void deleteAllAccounts();
-
-
 }
