@@ -1,4 +1,4 @@
-package ru.be_prog.JpaRepository;
+package ru.be_prog.repository;
 
 import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;

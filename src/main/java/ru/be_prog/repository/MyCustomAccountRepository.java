@@ -1,4 +1,4 @@
-package ru.be_prog.JpaRepository;
+package ru.be_prog.repository;
 
 import ru.be_prog.model.Account;
 

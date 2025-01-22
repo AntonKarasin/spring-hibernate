@@ -3,7 +3,7 @@ package ru.be_prog.service;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.be_prog.JpaRepository.AccountJpaRepository;
+import ru.be_prog.repository.AccountJpaRepository;
 import ru.be_prog.model.Account;
 
 import java.util.List;

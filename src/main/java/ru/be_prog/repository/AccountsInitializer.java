@@ -1,9 +1,9 @@
-package ru.be_prog.JpaRepository;
+package ru.be_prog.repository;
 import jakarta.annotation.PostConstruct;
 import jakarta.transaction.Transactional;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.server.Session;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionStatus;
@@ -21,7 +21,6 @@ public class AccountsInitializer {
     private final AccountService accountService;
     private final PlatformTransactionManager txManager;
 
-    @Transactional
     public void createAccounts() {
         accountService.deleteAllAccounts();
 
