@@ -12,6 +12,6 @@ import java.util.UUID;
 @Repository
 @Transactional
 public interface AccountJpaRepository extends  JpaRepository<Account, UUID> {
-    @Query("select a from Account a left join Profile p on p.country = ?1 and a.profile.id = p.id")
+    @Query("select a from Account a inner join Profile p on p.country = ?1 and a.profile.id = p.id")
     List<Account> getAccountsByCountry(String country);
 }
