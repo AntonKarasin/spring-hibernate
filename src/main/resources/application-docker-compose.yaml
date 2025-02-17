@@ -1,8 +1,10 @@
-spring.datasource.url: jdbc:postgresql://host.docker.internal:5555/account_service
+spring.datasource.url: jdbc:postgresql://service-db:5432/account_service
 spring.datasource.username: account_service
 spring.datasource.password: account_service
 spring.datasource.driver-class-name: org.postgresql.Driver
 spring.jpa.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.database-platform: org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
 spring.jpa.hibernate.show_sql: true
-spring.jpa.hibernate.hbm2ddl.auto: update
+spring.jpa.hibernate.hbm2ddl.auto: create
 spring.thymeleaf.check-template-location: false

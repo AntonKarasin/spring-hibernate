@@ -11,12 +11,13 @@ services:
       - service-db
 
   service-db:
+    container_name: service-db
     image: postgres:14.7-alpine
     environment:
       POSTGRES_USER: account_service
       POSTGRES_PASSWORD: account_service
     ports:
-      - "5555:5555"
+      - "5555:5432"
 
   pgadmin:
     container_name: pgadmin4_container
